@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.apiviagens.annotations.TripDateConstraint;
 
 import java.time.LocalDate;
 
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@TripDateConstraint // https://stackoverflow.com/questions/43785817/springboot-form-validation-for-ensuring-one-date-does-not-come-before-another
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,15 +32,4 @@ public class Trip {
 
     @ManyToOne
     private Destination destination;
-
-    //https://stackoverflow.com/questions/66374404/spring-boot-how-to-validate-fields-that-depend-on-each-other
-    @AssertTrue(message = "Start date must be before end date")
-    @JsonIgnore
-    public boolean isStartDateBeforeEndDate() {
-        if (startDate == null || endDate == null) {
-            return true;
-        }
-
-        return startDate.isBefore(endDate);
-    }
 }

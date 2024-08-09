@@ -11,6 +11,7 @@ import org.example.apiviagens.repositories.TripRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -36,7 +37,7 @@ public class TripController {
     }
 
     @PostMapping
-    public ResponseEntity<Trip> saveTrip(@RequestBody @Valid TripDto tripDto) {
+    public ResponseEntity<Trip> saveTrip(@RequestBody @Validated TripDto tripDto) {
         Trip trip = new Trip();
         Destination destination = destinationRepository
                 .findById(tripDto.destinationId())
