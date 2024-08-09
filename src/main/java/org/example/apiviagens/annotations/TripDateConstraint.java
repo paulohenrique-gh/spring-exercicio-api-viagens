@@ -2,7 +2,7 @@ package org.example.apiviagens.annotations;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-import validators.TripDateValidator;
+import org.example.apiviagens.validators.TripDateValidator;
 
 import java.lang.annotation.*;
 

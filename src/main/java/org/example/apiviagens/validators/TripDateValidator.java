@@ -1,4 +1,4 @@
-package validators;
+package org.example.apiviagens.validators;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
