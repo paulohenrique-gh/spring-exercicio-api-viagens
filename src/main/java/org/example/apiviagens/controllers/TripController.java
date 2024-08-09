@@ -1,7 +1,6 @@
 package org.example.apiviagens.controllers;
 
 import jakarta.validation.Valid;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.apiviagens.dtos.TripDto;
 import org.example.apiviagens.exceptions.ResourceNotFoundException;
