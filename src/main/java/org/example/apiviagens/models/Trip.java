@@ -27,6 +27,7 @@ public class Trip {
 
     private LocalDate startDate;
     private LocalDate endDate;
+    private String imageUrl;
 
     @ManyToOne
     private Destination destination;
